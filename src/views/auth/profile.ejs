@@ -1,0 +1,28 @@
+<%- include('../partials/header')%> <%- include('../partials/navbar')%>
+<div class="container p-4">
+	<div class="row">
+		<div class="col-6">
+			<h2 class="mt-3">Profile</h2>
+            <p class="fs-3 my-3">
+                Email:
+                <span class="bg-dark text-light px-3 rounded-3">
+                    <%= user.email %>
+                </spanc>
+            </p>
+            <p class="fs-3 my-3">
+                Username:
+                <span class="bg-dark text-light px-3 rounded-3">
+                    <%= user.username %>
+                </spanc>
+            </p>
+            <p class="fs-3 my-3">
+                Prime:
+                <span class="bg-dark text-light px-3 rounded-3">
+                    <%= user.prime %>
+                </spanc>
+            </p>
+		</div>
+	</div>
+</div>
+
+<%-include('../partials/footer')%>

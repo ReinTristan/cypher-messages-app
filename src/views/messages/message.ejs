@@ -1,0 +1,38 @@
+<%- include('../partials/header')%> <%- include('../partials/navbar')%>
+<div class="container p-4">
+	<div class="row">
+		<div class="col-6">
+			<h2><%= message.title %></h2>
+			<div class="mb-3">
+				<label for="from" class="form-label">From:</label>
+				<input
+					type="text"
+					class="form-control"
+					disabled
+					value="<%= message.username %>"
+					id="from"
+				/>
+			</div>
+			<div class="mb-3">
+				<label for="message" class="form-label">Message:</label>
+				<textarea
+					id=""
+					cols="30"
+					rows="10"
+					disabled
+					class="form-control"
+					id="message"
+				>
+                    <%= message.message %>
+                    </textarea
+				>
+			</div>
+			<div class="d-flex justify-content-center my-3">
+				<a href="/messages/new/<%=message.sender %>" class="btn btn-success"
+					>Answer</a
+				>
+			</div>
+		</div>
+	</div>
+</div>
+<%- include('../partials/footer')%>

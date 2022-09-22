@@ -1,0 +1,31 @@
+<%- include('../partials/header')%> <%- include('../partials/navbar')%> <%-
+include('../partials/flash')%>
+<div class="container p-4">
+	<div class="row">
+		<% if(messages.length > 0) { %> <% for(const message of messages) { %>
+		<div class="col-md-3">
+			<div class="card text-center">
+				<div class="card-body">
+					<h3 class="card-title text-uppercase"><%= message.title %></h3>
+					<p class="m-2">From: <%= message.username%></p>
+					<p><%= message.date%></p>
+					<a
+						href="/messages/message/<%= message.id %>"
+						target="_blank"
+						class="btn btn-info p-2 fs-4 rounded"
+						>Read -></a
+					>
+				</div>
+			</div>
+		</div>
+		<% } %> <% } else { %>
+		<div class="col-md-4 mx-auto">
+			<div class="card card-body text-center">
+				<p>You don't have messages</p>
+				<a href="/contacts">Contact someone here</a>
+			</div>
+		</div>
+		<% } %>
+	</div>
+</div>
+<%- include('../partials/footer')%>

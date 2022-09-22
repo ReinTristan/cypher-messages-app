@@ -1,0 +1,40 @@
+<%- include('../partials/header')%> <%- include('../partials/navbar')%>
+<div class="container p-4">
+	<div class="row">
+		<% if(messages.length > 0) { %>
+		<h2>Unread messages</h2>
+		<% for(const message of messages) { %>
+		<div class="col-md-3">
+			<div class="card text-center">
+				<div class="card-body">
+					<h3 class="card-title text-uppercase"><%= message.title %></h3>
+					<p class="m-2">From: <%= message.username%></p>
+					<p><%= message.date%></p>
+					<div class="d-flex justify-content-evenly">
+						<a
+							href="/messages/new/<%= message.sender%>"
+							target="_blank"
+							class="btn btn-warning p-2 fs-4 rounded"
+							>Answer</a
+						>
+						<a
+							href="/messages/message/<%= message.id %>"
+							target="_blank"
+							class="btn btn-success p-2 fs-4 rounded"
+							>see -></a
+						>
+					</div>
+				</div>
+			</div>
+		</div>
+		<% } %> <% } else { %>
+		<div class="col-md-4 mx-auto">
+			<div class="card card-body text-center">
+				<p>There are not new messages</p>
+				<a href="/contacts">Contact someone here</a>
+			</div>
+		</div>
+		<% } %>
+	</div>
+</div>
+<%- include('../partials/footer')%>
